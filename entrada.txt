@@ -1,41 +1,11 @@
 INICIO
-
-include <stdio.h>
-
-// Tipos + variaveis
-int idade = 20;
-float altura = 1.75;
-str nome = "Joao123";
-bool ativo = true;
-
-// Operadores aritmeticos
-resultado = idade + 10 - 2 * 3 / 1;
-
-// Operadores lógicos
-if (idade >= 18 && ativo == true) {
-    printf("Maior de idade");
-} else {
-    printf("Menor de idade");
-}
-
-// Repetição
-for (i = 0; i < 10; i++) {
-    printf("Contando");
-}
-
-// Funções e palavras reservadas
-main() {
-    return;
-}
-include <stdio.h>
-System;
-
-// Tokens variados
-#comentario
-{
-}
-();
-.
-"texto livre 123"
-
+	a = 2.21
+	b = 3.17
+	c = a + b - 1.2 * 3
+	
+	mostrar(a)
+	mostrar(b)
+	mostrar(c)
+	mostrar(2 * 3^2 - a)
+	
 FIM
