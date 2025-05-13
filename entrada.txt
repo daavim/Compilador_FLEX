@@ -1,15 +1,12 @@
 INICIO
-	
-	leia(a)
 
-	a= a+1
-	mostrar(a)
+mostrar("Digite o primeiro número")
+leia(a)
+mostrar("Digite o segundo número")
+leia(b)
 
-	b=6+5
-	mostrar(b)
+c = a + b 
 
-	c= 2*5
-	mostrar(c)
-	
-	mostrar(2 * 3^2 - a)
+mostrar("Resultado: ", c, ".")
+
 FIM

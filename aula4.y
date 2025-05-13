@@ -1,6 +1,7 @@
 %{
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 
 float var[26];
 
@@ -14,8 +15,10 @@ void yyerror (char *s){
 %union{
 	float flo;
 	int inte;
+	char *str;
 	}
 
+%token <str> STR
 %token <flo>NUM
 %token <inte>VARS
 %token PRINT
@@ -39,8 +42,8 @@ cod: cod cmdos
 	|
 	;
 
-cmdos: PRINT '(' exp ')' {
-						printf ("%.2f \n",$3);
+cmdos: PRINT '(' args ')' {
+						printf ("\n");
 						}
 	| VARS '=' exp {
 					var[$1] = $3;
@@ -49,6 +52,12 @@ cmdos: PRINT '(' exp ')' {
 		 scanf("%f", &var[$3]); 
 	}
 	;
+
+args: args ',' arg { } | arg { };
+
+arg: STR  { printf("%s", $1); free($1); }
+    | exp { printf("%.2f", $1); }
+    ;
 
 exp: exp '+' exp {$$ = $1 + $3;}
 	|exp '-' exp {$$ = $1 - $3;}
@@ -71,7 +80,6 @@ valor: NUM {$$ = $1;}
 int main(){
 	yyin=fopen("entrada.txt","r");
 	yyparse();
-	yylex();
 	fclose(yyin);
 	return 0;
 }
