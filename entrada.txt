@@ -1,11 +1,15 @@
 INICIO
-	a = 2.21
-	b = 3.17
-	c = a + b - 1.2 * 3
 	
+	leia(a)
+
+	a= a+1
 	mostrar(a)
+
+	b=6+5
 	mostrar(b)
+
+	c= 2*5
 	mostrar(c)
-	mostrar(2 * 3^2 - a)
 	
+	mostrar(2 * 3^2 - a)
 FIM

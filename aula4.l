@@ -5,8 +5,10 @@
 NUM [0-9]+\.?[0-9]*
 VARS [a-z]
 PRINT "mostrar"
+LEIA "leia"
 INI "INICIO"
 FIM "FIM"
+
 %%
 {NUM} {
 	yylval.flo = atof(yytext);
@@ -22,6 +24,9 @@ FIM "FIM"
 	return PRINT;
 }
 
+{LEIA} {
+	return LEIA;
+}
 
 [-+()=/*^] {
 	return *yytext;

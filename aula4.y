@@ -19,6 +19,7 @@ void yyerror (char *s){
 %token <flo>NUM
 %token <inte>VARS
 %token PRINT
+%token LEIA
 %token FIM
 %token INI
 %left '+' '-'
@@ -44,6 +45,9 @@ cmdos: PRINT '(' exp ')' {
 	| VARS '=' exp {
 					var[$1] = $3;
 					}
+	| LEIA '(' VARS ')' {
+		 scanf("%f", &var[$3]); 
+	}
 	;
 
 exp: exp '+' exp {$$ = $1 + $3;}
@@ -69,5 +73,5 @@ int main(){
 	yyparse();
 	yylex();
 	fclose(yyin);
-return 0;
+	return 0;
 }
